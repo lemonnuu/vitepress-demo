@@ -1,0 +1,15 @@
+{
+  "name": "vitepress-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:lemonnuu/vitepress-demo.git",
+  "author": "lemonnuu",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vitepress dev docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.0.0-alpha.4",
+    "vue": "^3.2.37"
+  }
+}
