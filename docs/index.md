@@ -5,7 +5,7 @@ hero:
   text: Vue3 & TypeScript share.
   tagline: Come on...
   image:
-    src: /logo.png
+    src: /test2.png
     alt: VitePress
   actions:
     - theme: brand

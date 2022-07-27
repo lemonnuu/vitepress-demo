@@ -34,15 +34,15 @@ function nav() {
       activeMatch: "/TypeScript/",
     },
     {
-      text: "下拉选择",
+      text: "生态系统",
       items: [
         {
-          text: "Vue3",
-          link: "/Vue3/000_draft",
+          text: "Vue Router",
+          link: "/VueRouter/index",
         },
         {
-          text: "TypeScript",
-          link: "/TypeScript/001_introduction",
+          text: "Pinia",
+          link: "/Pinia/index",
         },
       ],
     },
@@ -52,7 +52,31 @@ function nav() {
 function sidebarVue3() {
   return [
     {
-      text: "Vue3",
+      text: "介绍",
+      collapsible: true,
+      items: [
+        { text: "draft", link: "/Vue3/000_draft" },
+        { text: "Introduction", link: "/Vue3/001_introduction" },
+      ],
+    },
+    {
+      text: "选项式API",
+      collapsible: true,
+      items: [
+        { text: "draft", link: "/Vue3/000_draft" },
+        { text: "test", link: "/Vue3/999_test" },
+      ],
+    },
+    {
+      text: "组合式API",
+      collapsible: true,
+      items: [
+        { text: "draft", link: "/Vue3/000_draft" },
+        { text: "test", link: "/Vue3/999_test" },
+      ],
+    },
+    {
+      text: "深入组件",
       collapsible: true,
       items: [
         { text: "draft", link: "/Vue3/000_draft" },

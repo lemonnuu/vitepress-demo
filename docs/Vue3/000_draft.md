@@ -57,7 +57,7 @@ export default {
 
 ### 组合式 API {#composition-api}
 
-通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑。在单文件组件中，组合式 API 通常会与 [`<script setup>`](/api/sfc-script-setup) 搭配使用。这个 `setup` attribute 是一个标识，告诉 Vue 需要在编译时进行转换，来减少使用组合式 API 时的样板代码。例如，`<script setup>` 中的导入和顶层变量/函数都能够在模板中直接使用。
+通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑。在单文件组件中，组合式 API 通常会与 `<script setup>` 搭配使用。这个 `setup` attribute 是一个标识，告诉 Vue 需要在编译时进行转换，来减少使用组合式 API 时的样板代码。例如，`<script setup>` 中的导入和顶层变量/函数都能够在模板中直接使用。
 
 下面是使用了组合式 API 与 `<script setup>` 改造后和上面的模板完全一样的组件：
 
@@ -104,7 +104,7 @@ onMounted(() => {
 
 ## 应用实例 {#the-app-instance}
 
-每个 Vue 应用都是通过 [`createApp`](/api/application#createapp) 函数创建一个新的 **应用实例**：
+每个 Vue 应用都是通过 `createApp` 函数创建一个新的 **应用实例**：
 
 ```js
 import { createApp } from "vue";
@@ -167,7 +167,7 @@ app2.mount("#container-2");
 
 ## 模板语法 {#template-syntax}
 
-如果你对虚拟 DOM 的概念比较熟悉，并且偏向于 JavaScript 的原始力量，你也可以结合可选的 JSX 支持[直接手写渲染函数](/guide/extras/render-function.html)而不采用模板。但请注意，这将不会享受到和模板同等级别的编译时优化。
+如果你对虚拟 DOM 的概念比较熟悉，并且偏向于 JavaScript 的原始力量，你也可以结合可选的 JSX 支持直接手写渲染函数而不采用模板。但请注意，这将不会享受到和模板同等级别的编译时优化。
 
 ## Attribute 绑定 {#attribute-bindings}
 
@@ -236,4 +236,4 @@ data() {
 
 模板中的表达式将被沙盒化，仅能够访问到[有限的全局对象列表](https://github.com/vuejs/core/blob/main/packages/shared/src/globalsWhitelist.ts#L3)。该列表中会暴露常用的内置全局对象，比如 `Math` 和 `Date`。
 
-没有显式包含在列表中的全局对象将不能在模板内表达式中访问，例如用户附加在 `window` 上的 property。然而，你也可以自行在 [`app.config.globalProperties`](/api/application.html#app-config-globalproperties) 上显式地添加他们，供所有的 Vue 表达式使用。
+没有显式包含在列表中的全局对象将不能在模板内表达式中访问，例如用户附加在 `window` 上的 property。然而，你也可以自行在 [`app.config.globalProperties` 上显式地添加他们，供所有的 Vue 表达式使用。 
