@@ -2,15 +2,15 @@
 layout: home
 hero:
   name: 中银前端
-  text: Vue3 & TypeScript share.
+  text: Vue3 share.
   tagline: Come on...
   image:
-    src: /test2.png
+    src: /deer.png
     alt: VitePress
   actions:
     - theme: brand
       text: Get Started
-      link: /Vue3/000_draft
+      link: /Vue3/000_optimization
     - theme: alt
       text: View on GitHub
       link: https://github.com/lemonnuu/vitepress-demo

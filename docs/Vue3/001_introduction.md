@@ -1,8 +1,8 @@
 ---
-layout: doc
+outline: deep
 ---
 
-# 介绍
+# 简介
 
 ## 什么是 Vue？ {#what-is-vue}
 
@@ -11,15 +11,15 @@ Vue (发音为 /vjuː/，类似 **view**) 是一款用于构建用户界面的 J
 下面是一个最基本的示例：
 
 ```js
-import { createApp } from 'vue'
+import { createApp } from "vue";
 
 createApp({
   data() {
     return {
-      count: 0
-    }
-  }
-}).mount('#app')
+      count: 0,
+    };
+  },
+}).mount("#app");
 ```
 
 ```vue-html
@@ -43,7 +43,7 @@ const count = ref(0)
   </button>
 </div>
 
-<style scoped>
+<style>
 .demo {
   padding: 22px 24px;
   border-radius: 8px;
@@ -81,9 +81,9 @@ const count = ref(0)
 
 上面的示例展示了两个 Vue 的核心功能：
 
-- **声明式渲染**：Vue 通过自己的模板语法扩展了标准 HTML，使得我们可以声明式地描述基于 JavaScript 状态输出的 HTML。
+- <span style="background: rgba(122, 205, 166, 0.5)">**声明式渲染**</span>：Vue 通过自己的模板语法扩展了标准 HTML，使得我们可以声明式地描述基于 JavaScript 状态输出的 HTML。
 
-- **响应性**：Vue 会自动跟踪 JavaScript 状态变化并在改变发生时响应式地更新 DOM。
+- <span style="background: rgba(122, 205, 166, 0.5)">**响应性**</span>：Vue 会自动跟踪 JavaScript 状态变化并在改变发生时响应式地更新 DOM。
 
 ## 渐进式框架 {#the-progressive-framework}
 
@@ -106,10 +106,10 @@ Vue 是一个框架和生态，功能覆盖了大部分前端开发常见的需�
 export default {
   data() {
     return {
-      count: 0
-    }
-  }
-}
+      count: 0,
+    };
+  },
+};
 </script>
 
 <template>
@@ -125,7 +125,7 @@ button {
 
 ## API 风格 {#api-styles}
 
-Vue 的组件可以按两种不同的风格书写：**选项式 API** 和**组合式 API**。
+<span style="background: rgba(122, 205, 166, 0.5)">Vue 的组件可以按两种不同的风格书写：**选项式 API** 和**组合式 API**。</span>
 
 ### 选项式 API {#options-api}
 
@@ -138,24 +138,24 @@ export default {
   // 并且暴露在 `this` 上
   data() {
     return {
-      count: 0
-    }
+      count: 0,
+    };
   },
 
   // methods 是一些用来更改状态与触发更新的函数
   // 它们可以在模板中作为事件监听器绑定
   methods: {
     increment() {
-      this.count++
-    }
+      this.count++;
+    },
   },
 
   // 生命周期钩子会在组件生命周期的各个不同阶段被调用
   // 例如这个函数就会在组件挂载完成后被调用
   mounted() {
-    console.log(`The initial count is ${this.count}.`)
-  }
-}
+    console.log(`The initial count is ${this.count}.`);
+  },
+};
 </script>
 
 <template>
@@ -165,27 +165,26 @@ export default {
 
 ### 组合式 API {#composition-api}
 
-
 通过组合式 API，我们可以使用导入的 API 函数来描述组件逻辑。在单文件组件中，组合式 API 通常会与 `<script setup>`搭配使用。这个 `setup` attribute 是一个标识，告诉 Vue 需要在编译时进行转换，来减少使用组合式 API 时的样板代码。例如，`<script setup>` 中的导入和顶层变量/函数都能够在模板中直接使用。
 
 下面是使用了组合式 API 与 `<script setup>` 改造后和上面的模板完全一样的组件：
 
 ```vue
 <script setup>
-import { ref, onMounted } from 'vue'
+import { ref, onMounted } from "vue";
 
 // 响应式状态
-const count = ref(0)
+const count = ref(0);
 
 // 用来修改状态、触发更新的函数
 function increment() {
-  count.value++
+  count.value++;
 }
 
 // 生命周期钩子
 onMounted(() => {
-  console.log(`The initial count is ${count.value}.`)
-})
+  console.log(`The initial count is ${count.value}.`);
+});
 </script>
 
 <template>
@@ -193,20 +192,20 @@ onMounted(() => {
 </template>
 ```
 
-### 该选哪一个？{#which-one-to-choose}
+### 该选哪一个 {#which-one-to-choose}
 
 两种 API 风格都能够覆盖大部分的应用场景。它们只是同一个底层系统所提供的两套不同的接口。实际上，选项式 API 是在组合式 API 的基础上实现的！关于 Vue 的基础概念和知识在它们之间都是通用的。
 
 选项式 API 以“组件实例”的概念为中心 (即上述例子中的 `this`)，对于有面向对象语言背景的用户来说，这通常与基于类的心智模型更为一致。同时，它将响应性相关的细节抽象出来，并强制按照选项来组织代码，从而对初学者而言更为友好。
 
-组合式 API 的核心思想是直接在函数作用域内定义响应式状态变量，并将从多个函数中得到的状态组合起来处理复杂问题。这种形式更加自由，也需要你对 Vue 的响应式系统有更深的理解才能高效使用。相应的，它的灵活性也使得组织和重用逻辑的模式变得更加强大。
+组合式 API 的核心思想是直接在函数作用域内定义响应式状态变量，并将从多个函数中得到的状态组合起来处理复杂问题。这种形式更加自由，但需要对 Vue 的响应式系统有更深的理解才能高效使用。相应的，它的灵活性也使得组织和重用逻辑的模式变得更加强大。
 
 如果你是使用 Vue 的新手，这里是我们的一般性建议：
 
-- 出于学习目的使用时，推荐采用更易于自己理解的风格。再强调一下，大部分的核心概念在这两种风格之间都是通用的。熟悉了一种风格以后，你也能轻松掌握另一种风格。
+- 出于学习目的使用时，推荐采用更易于自己理解的风格。再强调一下，大部分的核心概念在这两种风格之间都是通用的。熟悉了一种风格以后，也能轻松掌握另一种风格。
 
 - 出于生产目的使用时
 
-  - 当你不需要使用构建工具，或者打算主要在低复杂度的场景中使用 Vue，例如渐进增强策略的应用场景，推荐采用选项式 API。
+  - 当不需要使用构建工具，或者打算主要在低复杂度的场景中使用 Vue，例如渐进增强策略的应用场景，推荐采用选项式 API。
 
-  - 当你打算用 Vue 构建完整的应用，推荐采用组合式 API + 单文件组件。
+  - <span style="background: rgba(242, 191, 69, 0.5)">当打算用 Vue 构建完整的应用，推荐采用组合式 API + 单文件组件。</span>
