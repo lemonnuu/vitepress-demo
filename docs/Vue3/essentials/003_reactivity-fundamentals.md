@@ -159,7 +159,7 @@ console.log(proxy === raw); // false
 
 只有代理是响应式的，更改原始对象不会触发更新。因此，<span style="background: rgba(254, 43, 80, 0.5)">使用 Vue 的响应式系统的最佳实践是 **仅使用你声明对象的代理版本**。且尽量用 `const` 声明变量。</span>
 
-为保证访问代理的一致性，对同一个对象调用 `reactive()` 会总是返回同样的代理，而对一个已存在代理调用 `reactive()` 也是返回同样的代理：
+<span style="background: rgba(242, 191, 69, 0.5)">为保证访问代理的一致性，对同一个对象调用 `reactive()` 会总是返回同样的代理，而对一个已存在代理调用 `reactive()` 也是返回同样的代理</span>：
 
 ```js
 // 在同一个对象上调用 reactive() 会返回相同的代理
@@ -169,7 +169,7 @@ console.log(reactive(raw) === proxy); // true
 console.log(reactive(proxy) === proxy); // true
 ```
 
-这个规则对嵌套对象也适用。依靠深层响应性，响应式对象内的嵌套对象依然是代理：
+<span style="background: rgba(242, 191, 69, 0.5)">这个规则对嵌套对象也适用。依靠深层响应性，响应式对象内的嵌套对象依然是代理</span>：
 
 ```js
 const proxy = reactive({});
@@ -195,7 +195,7 @@ console.log(proxy.nested === raw); // false
    state = reactive({ count: 1 });
    ```
 
-同时这也意味着当我们将响应式对象的 property 赋值或解构至本地变量时，或是将该 property 传入一个函数时，我们会失去响应性：
+同时这也<span style="background: rgba(254, 43, 80, 0.5)">意味着当我们将响应式对象的 property 赋值或解构至本地变量时，或是将该 property 传入一个函数时，我们会失去响应性</span>：
 
 :::tip
 只有当响应式对象的 property 为原始类型时, 将其赋值或解构至本地变量时，或是将该 property 传入一个函数时，才失去响应性。

@@ -10,7 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Get Started
-      link: /Vue3/000_optimization
+      link: /Vue3/mochi/001_optimization
     - theme: alt
       text: View on GitHub
       link: https://github.com/lemonnuu/vitepress-demo
